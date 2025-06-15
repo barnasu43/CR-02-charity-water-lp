@@ -1,51 +1,178 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Charity:Water Landing Page</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Avenir&family=Proxima+Nova&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="header">
-    <div class="logo">
-      <img src="img/charity-icon.png" alt="Charity:Water logo" />
-      <span>Charity:Water</span>
-    </div>
-    <button class="donate-button">Donate</button>
-  </header>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <main class="hero-section">
-    <div class="yellow-triangle"></div>
+html, body {
+  height: 100%;
+  font-family: 'Avenir', 'Proxima Nova', sans-serif;
+  background-color: #002f6c;
+  color: white;
+}
 
-    <div class="hero-text">
-      <h1>Clean water changes everything.</h1>
-      <p>
-        Your support brings clean water to communities—and gives children the freedom to learn, grow, and dream.
-      </p>
-      <div class="cta-form">
-        <input type="email" placeholder="Enter email" />
-        <button>Get Involved</button>
-      </div>
-    </div>
+/* This makes sure the content doesn't get too wide on large screens */
+.container {
+  max-width: 600px; /* Sets a maximum width */
+  margin: 0 auto;   /* Centers the container */
+  padding: 20px;    /* Adds space inside the container */
+}
 
-    <div class="hero-image">
-      <img src="img/hero-image.png" alt="Water Impact Image" />
-    </div>
-  </main>
+/* This makes text and elements adjust size on smaller screens */
+body {
+  font-size: 16px; /* Sets a base font size */
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+}
 
-  <section class="story-section">
-    <div class="story-container">
-      <h2>Our Story</h2>
-      <p>
-        In a small village, a girl named Leti spent hours walking for water each day. The journey was long, and the water wasn’t safe.
-      </p>
-      <p>
-        When clean water finally reached her village, everything changed. Leti could go to school, play with friends, and dream big.
-      </p>
-      <p><strong>This is what clean water makes possible—and this is the change you create.</strong></p>
-    </div>
-  </section>
-</body>
-</html>
+/* This rule makes the container and text smaller on small screens */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px; /* Less padding on small screens */
+  }
+  body {
+    font-size: 14px; /* Smaller text on small screens */
+  }
+}
+
+/* Header */
+.header {
+  background-color: #fff8e7;
+  color: black;
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #2e9df7;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.logo img {
+  width: 36px;
+  margin-right: 8px;
+}
+
+.donate-button {
+  background-color: #FFC907;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem 5% 3rem 5%;
+  background-color: #002f6c;
+  overflow: hidden;
+  gap: 1.5rem;
+}
+
+.yellow-triangle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 150px;
+  background-color: #FFC907;
+  clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+  z-index: 0;
+}
+
+.hero-text,
+.hero-image {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 45%;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  margin-top: 0.8rem;
+  line-height: 1.5;
+}
+
+.cta-form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.cta-form input {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 4px;
+  flex: 1;
+  max-width: 250px;
+}
+
+.cta-form button {
+  background-color: #FFC907;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  transform: rotate(-2deg);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Story Section */
+.story-section {
+  background-color: #fff8e7;
+  color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.story-container {
+  max-width: 720px;
+}
+
+.story-section h2 {
+  font-size: 1.8rem;
+  color: #2E9DF7;
+  margin-bottom: 1.2rem;
+}
+
+.story-section p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
+}

@@ -70,6 +70,12 @@ body {
   cursor: pointer;
 }
 
+/* Add a simple hover effect for the Donate button */
+.donate-button:hover {
+  background-color: #FFD84D; /* Slightly lighter yellow when hovered */
+  /* This helps users see the button is clickable */
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;
@@ -136,6 +142,12 @@ body {
   padding: 0.6rem 1.2rem;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* Add a simple hover effect for the call to action button */
+.cta-form button:hover {
+  background-color: #FFD84D; /* Slightly lighter yellow when hovered */
+  /* This helps users see the button is clickable */
 }
 
 .hero-image {

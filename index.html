@@ -13,7 +13,7 @@
       <img src="img/charity-icon.png" alt="Charity:Water logo" />
       <span>Charity:Water</span>
     </div>
-    <button class="donate-button">Donate</button>
+    <button class="donate-button" id="donate-button">Donate Now</button>
   </header>
 
   <main class="hero-section">
@@ -25,8 +25,8 @@
         Every action you take brings clean water to those who need it most- and lets you witness tnhe lives transformed by your impact.
       </p>
       <div class="cta-form">
-        <input type="email" placeholder="Enter email" />
-        <button>Get Involved</button>
+        <input type="email" placeholder="Enter email" id="cta-email" />
+        <button id="cta-button">Get Involved</button>
       </div>
     </div>
 
@@ -47,5 +47,28 @@
       <p><strong>This is what clean water makes possible—and this is the change you create.</strong></p>
     </div>
   </section>
+  <!-- Add a script at the end of the body to make the button interactive -->
+  <script>
+    // Get the button and input elements
+    var ctaButton = document.getElementById('cta-button');
+    var ctaEmail = document.getElementById('cta-email');
+
+    // Add a click event to the "Get Involved" button
+    ctaButton.addEventListener('click', function() {
+      // Show a simple thank you message
+      alert('Thank you for getting involved!');
+      // Optionally, clear the input field
+      ctaEmail.value = '';
+    });
+
+    // Get the donate button element
+    var donateButton = document.getElementById('donate-button');
+
+    // Add a click event to the "Donate" button
+    donateButton.addEventListener('click', function() {
+      // Show a thank you message for donating
+      alert('Thank you for your donation!');
+    });
+  </script>
 </body>
 </html>
